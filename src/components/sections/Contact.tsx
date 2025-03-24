@@ -12,7 +12,6 @@ const Contact = () => {
     message: "",
     agreement: false,
   });
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const recaptchaRef = useRef<ReCAPTCHA>(null);
@@ -24,7 +23,6 @@ const Contact = () => {
       alert("reCAPTCHA 인증이 필요합니다.");
       return;
     }
-    setCaptchaToken(token);
 
     if (!formData.agreement) {
       alert("개인정보 수집 및 이용에 동의해주세요.");
@@ -62,7 +60,6 @@ const Contact = () => {
         message: "",
         agreement: false,
       });
-      setCaptchaToken(null);
     } catch (error) {
       console.error("Error:", error);
       alert("문의 전송에 실패했습니다. 다시 시도해주세요.");
@@ -72,7 +69,7 @@ const Contact = () => {
   };
 
   const handleCaptchaChange = (token: string | null) => {
-    setCaptchaToken(token);
+    // captchaToken 상태 제거
   };
 
   return (
