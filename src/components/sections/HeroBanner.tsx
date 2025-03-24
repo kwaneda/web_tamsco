@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const HeroBanner = () => {
   return (
     <div className="relative h-[80vh] bg-white">
@@ -8,10 +10,12 @@ const HeroBanner = () => {
           clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0 100%)",
         }}
       >
-        <img
+        <Image
           src="/hero-bg.png"
           alt="City Background"
           className="w-full h-full object-cover"
+          width={specific_width}
+          height={specific_height}
         />
       </div>
 
@@ -26,7 +30,7 @@ const HeroBanner = () => {
               alignItems: "center",
             }}
           >
-            <img
+            <Image
               src="/tams-logo.svg"
               alt="TRINITY ASSET MANAGEMENT SERVICE INCORPORATED"
               style={{
@@ -35,6 +39,8 @@ const HeroBanner = () => {
                 objectFit: "contain",
                 objectPosition: "left",
               }}
+              width={specific_width}
+              height={specific_height}
             />
           </div>
           <p className="text-[#006086] text-lg whitespace-nowrap mt-8">

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import Image from "next/image";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,8 +21,8 @@ const Contact = () => {
     e.preventDefault();
     const token = await recaptchaRef.current?.executeAsync();
 
-    if (!captchaToken) {
-      alert("reCAPTCHA를 확인해주세요.");
+    if (!token) {
+      alert("reCAPTCHA 인증이 필요합니다.");
       return;
     }
 
@@ -44,7 +45,7 @@ const Contact = () => {
           phone: formData.phone,
           email: formData.email,
           message: formData.message,
-          captchaToken: captchaToken,
+          captchaToken: token,
         }),
       });
 
@@ -239,7 +240,13 @@ const Contact = () => {
               </h2>
             </div>
           </div>
-          <img src="/map.png" alt="Map" className="w-full" />
+          <Image
+            src="/map.png"
+            alt="Map"
+            width={1000}
+            height={100}
+            className="w-full"
+          />
           <div className="flex items-center justify-center mt-10">
             <span className="text-red-500 mr-2">📍</span>
             <p className="text-[#333333] text-[20px] font-medium">
