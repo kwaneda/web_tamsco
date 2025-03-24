@@ -193,7 +193,7 @@ const Business = () => {
               </h3>
               <ul className="p-4 space-y-2 text-sm bg-white border border-gray-200 text-[#333333] h-[calc(100%-40px)]">
                 <li>• 정관, 임원보수• 퇴직금 규정</li>
-                <li>• 기본 노무 규정 3종</li>
+                <li>• 기부 노무 규정 3종</li>
                 <li>• 고용지원금 점검</li>
                 <li>• 배당플랜 수립</li>
               </ul>

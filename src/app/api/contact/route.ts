@@ -20,18 +20,31 @@ export async function POST(req: Request) {
       await req.json();
 
     // reCAPTCHA 검증
-    const isValidCaptcha = await verifyCaptcha(captchaToken);
-    if (!isValidCaptcha) {
-      return NextResponse.json({ success: false, error: "Invalid captcha" });
+    const captchaValid = await verifyCaptcha(captchaToken);
+    if (!captchaValid) {
+      return new Response(JSON.stringify({ error: "Invalid captcha" }), {
+        status: 400,
+      });
     }
 
-    // Resend 이메일 전송 코드
     const data = await resend.emails.send({
-      // ... 기존 코드
+      from: "TAMS Inc. <supporter@tamsco.kr>",
+      to: ["supporter@tamsco.kr"],
+      subject: "새로운 문의가 도착했습니다",
+      html: `
+        <h2>새로운 문의</h2>
+        <p>회사명: ${companyName}</p>
+        <p>이름: ${name}</p>
+        <p>연락처: ${phone}</p>
+        <p>이메일: ${email}</p>
+        <p>문의내용: ${message}</p>
+      `,
     });
 
-    return NextResponse.json({ success: true, data });
+    return new Response(JSON.stringify(data));
   } catch (error) {
-    return NextResponse.json({ success: false, error: error.message });
+    return new Response(JSON.stringify({ error: "Failed to send email" }), {
+      status: 500,
+    });
   }
 }

@@ -18,6 +18,7 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const token = await recaptchaRef.current?.executeAsync();
 
     if (!captchaToken) {
       alert("reCAPTCHA를 확인해주세요.");
@@ -199,6 +200,7 @@ const Contact = () => {
             {/* reCAPTCHA 자리 표시 */}
             <div className="w-full flex justify-center mb-6">
               <ReCAPTCHA
+                ref={recaptchaRef}
                 sitekey="6Lc5Vf4qAAAAAAGSmAd20UNCuMAsHx_G14SBkD8s"
                 onChange={handleCaptchaChange}
               />

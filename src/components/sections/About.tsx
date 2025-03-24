@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const About = () => {
   const advisors = [
     {
@@ -111,9 +113,11 @@ const About = () => {
         <div className="mb-20">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="w-full md:w-1/2">
-              <img
+              <Image
                 src="/meeting.jpg"
                 alt="Business Meeting"
+                width={500}
+                height={300}
                 className="w-full rounded-lg shadow-lg"
               />
             </div>
@@ -131,8 +135,8 @@ const About = () => {
               </p>
               <div className="text-right">
                 <p className="text-lg text-[#333333] mb-2 font-bold italic">
-                  " 철저한 보안과 신뢰를 바탕으로 기업의 지속 성장과 성공을
-                  설계합니다 "
+                  &quot; 철저한 보안과 신뢰를 바탕으로 기업의 지속 성장과 성공을
+                  설계합니다 &quot;
                 </p>
                 <p className="text-[#333333] font-bold">- 탐스㈜ CEO 엄태영</p>
               </div>
@@ -166,9 +170,11 @@ const About = () => {
         {/* 조직도 내용 */}
         <div className="mb-20">
           <div className="flex justify-center">
-            <img
+            <Image
               src="/organization.png"
               alt="조직도"
+              width={1000}
+              height={500}
               className="max-w-4xl w-full"
             />
           </div>
@@ -207,9 +213,11 @@ const About = () => {
               <div className="flex gap-8">
                 {/* 좌측: 이미지, 이름, 직함 */}
                 <div className="w-1/3 flex flex-col items-center">
-                  <img
+                  <Image
                     src={advisor.image}
                     alt={advisor.name}
+                    width={192}
+                    height={192}
                     className="w-48 h-48 rounded-full object-cover border-4 border-[#006086] mb-4"
                   />
                   <h4 className="text-xl font-bold text-[#333333] mb-1 text-center">
