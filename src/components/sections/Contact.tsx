@@ -68,8 +68,8 @@ const Contact = () => {
     }
   };
 
-  const handleCaptchaChange = (token: string | null) => {
-    // captchaToken 상태 제거
+  const handleCaptchaChange = () => {
+    console.log("reCAPTCHA verified");
   };
 
   return (
