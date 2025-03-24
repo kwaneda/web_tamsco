@@ -11,11 +11,11 @@ const HeroBanner = () => {
         }}
       >
         <Image
-          src="/hero-bg.png"
+          src="/images/city-bg.jpg"
           alt="City Background"
           className="w-full h-full object-cover"
-          width={specific_width}
-          height={specific_height}
+          width={1920}
+          height={1080}
         />
       </div>
 
@@ -39,8 +39,8 @@ const HeroBanner = () => {
                 objectFit: "contain",
                 objectPosition: "left",
               }}
-              width={specific_width}
-              height={specific_height}
+              width={1920}
+              height={1080}
             />
           </div>
           <p className="text-[#006086] text-lg whitespace-nowrap mt-8">
