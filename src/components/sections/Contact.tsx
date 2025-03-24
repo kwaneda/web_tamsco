@@ -11,15 +11,15 @@ const Contact = () => {
     message: "",
     agreement: false,
   });
-  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!captchaValue) {
+    if (!captchaToken) {
       alert("reCAPTCHA를 확인해주세요.");
       return;
     }
@@ -32,19 +32,25 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/send-email", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          ...formData,
-          captchaValue,
+          companyName: formData.company,
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
+          captchaToken: captchaToken,
         }),
       });
 
-      if (response.ok) {
-        alert("문의가 성공적으로 접수되었습니다.");
+      const data = await response.json();
+
+      if (data.success) {
+        alert("문의가 성공적으로 전송되었습니다.");
         setFormData({
           company: "",
           name: "",
@@ -53,15 +59,20 @@ const Contact = () => {
           message: "",
           agreement: false,
         });
-        setCaptchaValue(null);
+        setCaptchaToken(null);
       } else {
-        throw new Error("전송에 실패했습니다.");
+        alert("문의 전송에 실패했습니다. 다시 시도해주세요.");
       }
     } catch (error) {
-      alert("문의 접수 중 오류가 발생했습니다. 다시 시도해주세요.");
+      alert("오류가 발생했습니다. 다시 시도해주세요.");
+      console.error("Error:", error);
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleCaptchaChange = (token: string | null) => {
+    setCaptchaToken(token);
   };
 
   return (
@@ -186,10 +197,11 @@ const Contact = () => {
             </div>
 
             {/* reCAPTCHA 자리 표시 */}
-            <div className="flex justify-center my-6">
-              <div className="w-[302px] h-[76px] bg-gray-100 rounded flex items-center justify-center text-[#333333] border">
-                reCAPTCHA
-              </div>
+            <div className="w-full flex justify-center mb-6">
+              <ReCAPTCHA
+                sitekey="6Lc5Vf4qAAAAAAGSmAd20UNCuMAsHx_G14SBkD8s"
+                onChange={handleCaptchaChange}
+              />
             </div>
 
             <button
