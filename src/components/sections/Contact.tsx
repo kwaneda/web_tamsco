@@ -20,11 +20,11 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const token = await recaptchaRef.current?.executeAsync();
-
     if (!token) {
       alert("reCAPTCHA 인증이 필요합니다.");
       return;
     }
+    setCaptchaToken(token);
 
     if (!formData.agreement) {
       alert("개인정보 수집 및 이용에 동의해주세요.");
@@ -49,25 +49,23 @@ const Contact = () => {
         }),
       });
 
-      const data = await response.json();
-
-      if (data.success) {
-        alert("문의가 성공적으로 전송되었습니다.");
-        setFormData({
-          company: "",
-          name: "",
-          phone: "",
-          email: "",
-          message: "",
-          agreement: false,
-        });
-        setCaptchaToken(null);
-      } else {
-        alert("문의 전송에 실패했습니다. 다시 시도해주세요.");
+      if (!response.ok) {
+        throw new Error("Failed to send message");
       }
+
+      alert("문의가 성공적으로 전송되었습니다.");
+      setFormData({
+        company: "",
+        name: "",
+        phone: "",
+        email: "",
+        message: "",
+        agreement: false,
+      });
+      setCaptchaToken(null);
     } catch (error) {
-      alert("오류가 발생했습니다. 다시 시도해주세요.");
       console.error("Error:", error);
+      alert("문의 전송에 실패했습니다. 다시 시도해주세요.");
     } finally {
       setIsSubmitting(false);
     }
