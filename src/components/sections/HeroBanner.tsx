@@ -11,7 +11,7 @@ const HeroBanner = () => {
         }}
       >
         <Image
-          src="/images/hero-bg.png"
+          src="/hero-bg.png"
           alt="City Background"
           className="w-full h-full object-cover"
           width={1920}
