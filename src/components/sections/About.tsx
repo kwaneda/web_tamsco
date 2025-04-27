@@ -141,7 +141,7 @@ const About = () => {
                   &quot; 철저한 보안과 신뢰를 바탕으로 기업의 지속 성장과 성공을
                   설계합니다 &quot;
                 </p>
-                <p className="text-[#333333] font-bold">- 탐스㈜ CEO 엄태영</p>
+                <p className="text-[#333333] font-bold">탐스 ㈜ </p>
               </div>
             </div>
           </div>
