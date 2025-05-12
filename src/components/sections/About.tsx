@@ -122,7 +122,7 @@ const About = () => {
                 { year: '2022', title: 'A to Z 컨설팅 패키지 서비스', desc: '기업/자산가 대상 패키지, 자산가 대상 패밀리 패키지 개시' },
                 { year: '2023', title: '세무 전략컨설팅 부서 신설', desc: '세무 조사, 법인 이전, 양도세 솔루션 전문\n누적 상담 800여회' },
                 { year: '2024~', title: '글로벌 자산배분 컨설팅 개시', desc: '베트남 부동산 컨설팅' },
-              ].map((item, idx) => (
+              ].map((item) => (
                 <div key={item.year} className="mb-8 relative">
                   <div className="absolute -left-7 top-1 w-4 h-4 bg-blue-400 rounded-full border-2 border-white"></div>
                   <div className="text-blue-600 font-bold">{item.year}</div>
