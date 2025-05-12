@@ -111,11 +111,9 @@ const About = () => {
         </div>
 
         <div className="flex flex-col md:flex-row w-full gap-8">
-          {/* 좌측 타임라인 */}
-          <div className="md:w-1/2 w-full flex flex-col items-start">
-          <div className="relative pl-16">
-              {/* 세로선 */}
-      <div className="absolute left-7 top-0 bottom-0 w-1 bg-[#4F81BD] z-0" />
+  {/* 좌측 타임라인 */}
+  <div className="md:w-1/2 w-full flex flex-col items-start">
+    <div className="relative pl-4">
       {[
         { year: '2018', title: '트리니티 에셋 매니지먼트 출범', desc: '고액 자산가 및 법인전문 자산관리 컨설팅 개시\n200여건의 컨설팅 진행' },
         { year: '2019', title: '탐스 주식회사 설립', desc: '법인 전문 컨설팅으로 확대\n80여개 고객사 자산관리 진행' },
@@ -124,23 +122,31 @@ const About = () => {
         { year: '2023', title: '세무 전략컨설팅 부서 신설', desc: '세무 조사, 법인 이전, 양도세 솔루션 전문\n누적 상담 800여회' },
         { year: '2024~', title: '글로벌 자산배분 컨설팅 개시', desc: '베트남 부동산 컨설팅' },
       ].map((item) => (
-        <div key={item.year} className="flex items-start mb-8 relative z-10">
+        <div key={item.year} className="flex items-start mb-8 relative">
           {/* 연도 */}
           <div className="w-16 text-[#4F81BD] font-bold text-lg text-right pr-4 flex-shrink-0">
             {item.year}
           </div>
-          {/* 시점원 */}
-          <div className="relative mr-4" style={{ width: 32, height: 32 }}>
+          {/* 세로선 + 시점원 */}
+          <div className="relative flex flex-col items-center" style={{ width: 24 }}>
+            {/* 세로선: 첫번째~마지막까지 관통 */}
             <div
-              className="absolute left-1/2 top-1/2 w-4 h-4 rounded-full border-2 border-white"
+              className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2"
+              style={{ background: '#4F81BD', zIndex: 0 }}
+            />
+            {/* 시점원 */}
+            <div
+              className="w-4 h-4 rounded-full border-2 border-white z-10"
               style={{
                 background: '#4F81BD',
-                transform: 'translate(-50%, -50%)',
+                position: 'relative',
+                top: 0,
+                left: 0,
               }}
             />
           </div>
           {/* 내용 */}
-          <div>
+          <div className="pl-4">
             <div className="font-bold text-[#222]">{item.title}</div>
             <div className="text-gray-500 whitespace-pre-line">{item.desc}</div>
           </div>
@@ -155,9 +161,9 @@ const About = () => {
             </h3>
             <p className="text-[#333333] mb-6 leading-relaxed">
               탐스 경영컨설팅은 기업의 지속 가능한 성장과 자산가의 안정적인 승계를 지원하기<br/>
-              위해설 립된 세무 및 경영 전문 컨설팅 기업입니다.자산과 경영 전반에 걸친 세무 전략의<br/>
+              위해 설립된 세무 및 경영 전문 컨설팅 기업입니다. 자산과 경영 전반에 걸친 세무 전략의<br/>
               중심축을 다루며 세무, 회계, 법무, 부동산 등 각 분야의 전문가들이 협업하여 정밀한<br/>
-              분석과 실행 중심의 전략으로고객의 세무 리스크를 최소화하고 자산 가치를 극대화<br/>
+              분석과 실행 중심의 전략으로 고객의 세무 리스크를 최소화하고 자산 가치를 극대화<br/>
               합니다.
             </p>
             <p className="text-[#333333] mb-6 leading-relaxed">
