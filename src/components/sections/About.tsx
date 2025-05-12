@@ -113,25 +113,46 @@ const About = () => {
         <div className="flex flex-col md:flex-row w-full gap-8">
           {/* 좌측 타임라인 */}
           <div className="md:w-1/2 w-full flex flex-col items-start">
-            <div className="border-l-2 border-blue-400 pl-6 relative">
+          <div className="relative pl-12">
               {/* 타임라인 아이템 반복 */}
               {[
-                { year: '2018', title: '트리니티 에셋 매니지먼트 출범', desc: '고액 자산가 및 법인전문 자산관리 컨설팅 개시\n200여건의 컨설팅 진행' },
-                { year: '2019', title: '탐스 주식회사 설립', desc: '법인 전문 컨설팅으로 확대\n80여개 고객사 자산관리 진행' },
-                { year: '2020', title: '노무법인/회계법인/법무법인 파트너십 체결', desc: '업무 협력 및 연합자문 TF팀 구성' },
-                { year: '2022', title: 'A to Z 컨설팅 패키지 서비스', desc: '기업/자산가 대상 패키지, 자산가 대상 패밀리 패키지 개시' },
-                { year: '2023', title: '세무 전략컨설팅 부서 신설', desc: '세무 조사, 법인 이전, 양도세 솔루션 전문\n누적 상담 800여회' },
-                { year: '2024~', title: '글로벌 자산배분 컨설팅 개시', desc: '베트남 부동산 컨설팅' },
-              ].map((item) => (
-                <div key={item.year} className="mb-8 relative">
-                  <div className="absolute -left-7 top-1 w-4 h-4 bg-blue-400 rounded-full border-2 border-white"></div>
-                  <div className="text-blue-600 font-bold">{item.year}</div>
-                  <div className="font-semibold">{item.title}</div>
-                  <div className="text-gray-500 whitespace-pre-line">{item.desc}</div>
-                </div>
-              ))}
-            </div>
+        { year: '2018', title: '트리니티 에셋 매니지먼트 출범', desc: '고액 자산가 및 법인전문 자산관리 컨설팅 개시\n200여건의 컨설팅 진행' },
+        { year: '2019', title: '탐스 주식회사 설립', desc: '법인 전문 컨설팅으로 확대\n80여개 고객사 자산관리 진행' },
+        { year: '2020', title: '노무법인/회계법인/법무법인 파트너십 체결', desc: '업무 협력 및 연합자문 TF팀 구성' },
+        { year: '2022', title: 'A to Z 컨설팅 패키지 서비스', desc: '기업/자산가 대상 패키지, 자산가 대상 패밀리 패키지 개시' },
+        { year: '2023', title: '세무 전략컨설팅 부서 신설', desc: '세무 조사, 법인 이전, 양도세 솔루션 전문\n누적 상담 800여회' },
+        { year: '2024~', title: '글로벌 자산배분 컨설팅 개시', desc: '베트남 부동산 컨설팅' },
+      ].map((item) => (
+        <div key={item.year} className="flex items-start mb-8 relative">
+          {/* 연도 */}
+          <div className="w-16 text-[#4F81BD] font-bold text-lg text-right pr-4 flex-shrink-0">
+            {item.year}
           </div>
+          {/* 타임라인 라인 & 시점원 */}
+          <div className="relative flex flex-col items-center mr-4">
+            {/* 시점원 */}
+            <div className="w-4 h-4 rounded-full border-2 border-white" style={{ background: '#4F81BD' }} />
+            {/* 세로 라인 (마지막 항목은 라인 없음) */}
+            <div
+              className="w-1 flex-1"
+              style={{
+                background: '#4F81BD',
+                minHeight: '32px',
+                marginTop: '2px',
+                marginBottom: '-2px',
+                visibility: item.year === '2024~' ? 'hidden' : 'visible',
+              }}
+            />
+          </div>
+          {/* 내용 */}
+          <div>
+            <div className="font-bold text-[#222]">{item.title}</div>
+            <div className="text-gray-500 whitespace-pre-line">{item.desc}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
           {/* 우측 회사소개 ... */}
           <div className="w-full md:w-1/2">
             <h3 className="text-[64px] font-black text-[#1a1a1a] mb-8 leading-none tracking-tight">
