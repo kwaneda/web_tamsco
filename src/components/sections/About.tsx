@@ -158,22 +158,22 @@ const About = () => {
     </div>
   </div>
           {/* 우측 회사소개 ... */}
-          <div className="w-full md:w-1/2">
-            <h3 className="text-[64px] font-black text-[#1a1a1a] mb-8 leading-none tracking-tight">
+          <div className="w-full md:w-1/2 mt-12">
+            <h3 className="text-[64px] font-black text-[#1a1a1a] mb-12 leading-none tracking-tight">
               ABOUT TAMS Inc.
             </h3>
-            <p className="text-[#333333] mb-6 leading-relaxed">
+            <p className="text-[#333333] mb-8 leading-relaxed">
               탐스 경영컨설팅은 기업의 지속 가능한 성장과 자산가의 안정적인 승계를 지원하기<br/>
               위해 설립된 세무 및 경영 전문 컨설팅 기업입니다. 자산과 경영 전반에 걸친 세무 전략의<br/>
               중심축을 다루며 세무, 회계, 법무, 부동산 등 각 분야의 전문가들이 협업하여 정밀한<br/>
               분석과 실행 중심의 전략으로 고객의 세무 리스크를 최소화하고 자산 가치를 극대화<br/>
               합니다.
             </p>
-            <p className="text-[#333333] mb-6 leading-relaxed">
+            <p className="text-[#333333] mb-8 leading-relaxed">
               세무 이슈 해결은 물론, 지속 가능한 경영과 자산 보호까지.단순한 자문을 넘어 고객과<br />
               함께 성장하는 동반자적 컨설팅을 제공하는TAMS와 함께 전략적 미래를 설계하십시오.<br/>
             </p>
-            <div className="text-right">
+            <div className="text-right mt-8">
               <p className="text-lg text-[#333333] mb-2 font-bold italic">
                 &quot; 철저한 보안과 신뢰를 바탕으로 기업의 지속 성장과 성공을
                 설계합니다 &quot;
