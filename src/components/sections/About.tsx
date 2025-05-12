@@ -114,15 +114,16 @@ const About = () => {
   {/* 좌측 타임라인 */}
   <div className="md:w-1/2 w-full flex flex-col items-start">
     <div className="relative pl-4">
-      {/* 세로선: 시점원 중앙에 맞춤 */}
-      <div className="absolute" style={{
-        left: '88px', // 연도(64px) + pr-4(16px) + 여유(8px)
-        top: 0,
-        bottom: 0,
-        width: '4px',
-        background: '#4F81BD',
-        zIndex: 0,
-      }} />
+      {/* 세로선: 시점원 컨테이너 중앙에 맞춤, width 2px */}
+      <div
+        className="absolute top-0 bottom-0"
+        style={{
+          left: '88px', // 연도(64px) + pr-4(16px) + 시점원 컨테이너(8px)
+          width: '2px',
+          background: '#4F81BD',
+          zIndex: 0,
+        }}
+      />
       {[
         { year: '2018', title: '트리니티 에셋 매니지먼트 출범', desc: '고액 자산가 및 법인전문 자산관리 컨설팅 개시\n200여건의 컨설팅 진행' },
         { year: '2019', title: '탐스 주식회사 설립', desc: '법인 전문 컨설팅으로 확대\n80여개 고객사 자산관리 진행' },
@@ -137,7 +138,7 @@ const About = () => {
             {item.year}
           </div>
           {/* 시점원 */}
-          <div className="relative" style={{ width: 32, height: 32 }}>
+          <div className="relative flex items-center justify-center" style={{ width: 32, height: 32 }}>
             <div
               className="absolute left-1/2 top-1/2 w-4 h-4 rounded-full border-2 border-white"
               style={{
