@@ -118,8 +118,8 @@ const About = () => {
       <div
         className="absolute top-0 bottom-0"
         style={{
-          left: '88px', // 연도(64px) + pr-4(16px) + 시점원 컨테이너(8px)
-          width: '2px',
+          left: '92px', // 연도(64px) + pr-4(16px) + 시점원 컨테이너(8px)
+          width: '1px',
           background: '#4F81BD',
           zIndex: 0,
         }}
