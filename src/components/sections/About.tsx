@@ -285,7 +285,7 @@ const About = () => {
                       {advisor.mainCareer.map((career, index) => (
                         <li
                           key={index}
-                          className="text-base text-[#333333] flex items-start"
+                          className="text-base text-[#333333] flex items-start whitespace-pre-line"
                         >
                           <span className="mr-2">•</span>
                           <span>{career}</span>
