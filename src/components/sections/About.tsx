@@ -114,6 +114,8 @@ const About = () => {
   {/* 좌측 타임라인 */}
   <div className="md:w-1/2 w-full flex flex-col items-start">
     <div className="relative pl-4">
+      {/* 세로선: 타임라인 전체를 관통 */}
+      <div className="absolute left-8 top-0 bottom-0 w-1 bg-[#4F81BD] z-0" />
       {[
         { year: '2018', title: '트리니티 에셋 매니지먼트 출범', desc: '고액 자산가 및 법인전문 자산관리 컨설팅 개시\n200여건의 컨설팅 진행' },
         { year: '2019', title: '탐스 주식회사 설립', desc: '법인 전문 컨설팅으로 확대\n80여개 고객사 자산관리 진행' },
@@ -122,26 +124,19 @@ const About = () => {
         { year: '2023', title: '세무 전략컨설팅 부서 신설', desc: '세무 조사, 법인 이전, 양도세 솔루션 전문\n누적 상담 800여회' },
         { year: '2024~', title: '글로벌 자산배분 컨설팅 개시', desc: '베트남 부동산 컨설팅' },
       ].map((item) => (
-        <div key={item.year} className="flex items-start mb-8 relative">
+        <div key={item.year} className="flex items-start mb-8 relative z-10">
           {/* 연도 */}
           <div className="w-16 text-[#4F81BD] font-bold text-lg text-right pr-4 flex-shrink-0">
             {item.year}
           </div>
-          {/* 세로선 + 시점원 */}
-          <div className="relative flex flex-col items-center" style={{ width: 24 }}>
-            {/* 세로선: 첫번째~마지막까지 관통 */}
+          {/* 시점원 */}
+          <div className="relative" style={{ width: 32, height: 32 }}>
             <div
-              className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2"
-              style={{ background: '#4F81BD', zIndex: 0 }}
-            />
-            {/* 시점원 */}
-            <div
-              className="w-4 h-4 rounded-full border-2 border-white z-10"
+              className="absolute left-1/2 top-1/2 w-4 h-4 rounded-full border-2 border-white"
               style={{
                 background: '#4F81BD',
-                position: 'relative',
-                top: 0,
-                left: 0,
+                transform: 'translate(-50%, -50%)',
+                zIndex: 10,
               }}
             />
           </div>
