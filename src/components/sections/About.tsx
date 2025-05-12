@@ -114,11 +114,12 @@ const About = () => {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="w-full md:w-1/2">
               <Image
-                src="/meeting.jpg"
-                alt="Business Meeting"
+                src="/meeting.png"
+                alt="Business History"
                 width={500}
                 height={300}
                 className="w-full rounded-lg shadow-lg"
+                unoptimized={true}  
               />
             </div>
             <div className="w-full md:w-1/2">
