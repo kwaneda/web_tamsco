@@ -62,7 +62,7 @@ const Cases = () => {
     },
   ];
 
- return (
+  return (
     <section id="cases" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* 헤더 부분 유지 */}
@@ -92,26 +92,26 @@ const Cases = () => {
           탐스 경영 컨설팅에서 진행한 컨설팅 사례입니다
         </p>
 
-        {/* 자문 사례 목록 - 전체 너비 사용 */}
-        <div className="w-full mb-16">
+        {/* 자문 사례 그리드 */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-20">
           {consultingCases.map((item, index) => (
             <div
               key={index}
-              className="flex items-center justify-between py-4 border-b border-gray-200 hover:bg-gray-50"
+              className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div className="flex-1 flex items-center">
-                <span className="text-[#333333] w-24 font-medium">
-                  {item.location}
-                </span>
-                <span className="text-[#333333] w-32">
-                  {item.client}
-                </span>
-              </div>
-              <div className="flex-1">
-                <span className="text-[#333333]">{item.description}</span>
-              </div>
-              <div className="flex items-center">
-                <div className="bg-[#006086] text-white px-6 py-2 rounded-lg text-sm w-44 text-center">
+              <div className="p-4">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-[#333333] font-medium">
+                    {item.location}
+                  </span>
+                  <span className="text-[#333333] text-sm">
+                    {item.client}
+                  </span>
+                </div>
+                <p className="text-[#333333] text-sm mb-4 min-h-[40px]">
+                  {item.description}
+                </p>
+                <div className="bg-[#006086] text-white py-2 px-4 rounded text-center text-sm">
                   valuation {item.valuation}
                 </div>
               </div>
@@ -119,9 +119,9 @@ const Cases = () => {
           ))}
         </div>
 
-        {/* 하단 통계 원형 - 가운데 정렬 */}
-        <div className="flex justify-center gap-8 mt-16">
-          <div className="text-center p-8 bg-[#DCE6FE] rounded-full w-48 h-48 flex flex-col justify-center relative z-10 mix-blend-multiply">
+        {/* 하단 통계 원형 - 겹치도록 배치 */}
+        <div className="relative flex justify-center mt-16">
+          <div className="text-center p-8 bg-[#DCE6FE] rounded-full w-48 h-48 flex flex-col justify-center relative z-10 mix-blend-multiply mr-[-30px]">
             <p className="text-[#333333] mb-2">누적 절세 금액</p>
             <p className="text-3xl font-bold text-[#006086]">980억</p>
           </div>
