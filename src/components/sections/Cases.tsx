@@ -100,8 +100,8 @@ const Cases = () => {
     className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
   >
     <div className="p-4 flex flex-col h-full">
-      {/* 상단 박스 */}
-      <div className="border border-[#333333] rounded p-3 mb-3">
+      {/* 상단 정보 (회색 배경) */}
+      <div className="bg-gray-50 -mx-4 -mt-4 p-4 mb-3">
         <div className="flex justify-between items-center">
           <span className="text-[#333333] font-medium">
             {item.location}
@@ -111,14 +111,19 @@ const Cases = () => {
           </span>
         </div>
       </div>
+      
+      {/* 구분선 */}
+      <div className="border-b border-gray-200 mb-3"></div>
 
       {/* 설명 텍스트 */}
       <p className="text-[#333333] text-sm mb-4 flex-grow">
         {item.description}
       </p>
 
-      {/* Valuation 부분 */}
-      <div className="bg-[#4F81BD] text-white py-2 px-4 rounded text-center text-sm">
+      {/* Valuation 부분 - 줄에 따라 다른 색상 적용 */}
+      <div className={`text-white py-2 px-4 rounded text-center text-sm ${
+        index < 5 ? 'bg-[#4F81BD]' : 'bg-[#1F497D]'
+      }`}>
         valuation {item.valuation}
       </div>
     </div>
