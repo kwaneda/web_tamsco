@@ -31,9 +31,9 @@ const Cases = () => {
       valuation: "1,000억",
     },
     {
-      location: "목천소재",
+      location: "옥천소재",
       client: "㈜*******",
-      description: "서비스 개인사업자 법인전환 컨설팅",
+      description: "개인사업자 법인전환 컨설팅",
       valuation: "300억",
     },
     {
@@ -51,7 +51,7 @@ const Cases = () => {
     {
       location: "서울소재",
       client: "㈜****",
-      description: "대표이사개인 2개 주택 증여시 약 20억절세",
+      description: "대표이사 2개 주택 증여 20억 절세",
       valuation: "200억",
     },
     {
@@ -95,28 +95,35 @@ const Cases = () => {
         {/* 자문 사례 그리드 */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-20">
           {consultingCases.map((item, index) => (
-            <div
-              key={index}
-              className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
-            >
-              <div className="p-4">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-[#333333] font-medium">
-                    {item.location}
-                  </span>
-                  <span className="text-[#333333] text-sm">
-                    {item.client}
-                  </span>
-                </div>
-                <p className="text-[#333333] text-sm mb-4 min-h-[40px]">
-                  {item.description}
-                </p>
-                <div className="bg-[#006086] text-white py-2 px-4 rounded text-center text-sm">
-                  valuation {item.valuation}
-                </div>
-              </div>
-            </div>
-          ))}
+  <div
+    key={index}
+    className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+  >
+    <div className="p-4 flex flex-col h-full">
+      {/* 상단 박스 */}
+      <div className="border border-[#333333] rounded p-3 mb-3">
+        <div className="flex justify-between items-center">
+          <span className="text-[#333333] font-medium">
+            {item.location}
+          </span>
+          <span className="text-[#333333] text-sm">
+            {item.client}
+          </span>
+        </div>
+      </div>
+
+      {/* 설명 텍스트 */}
+      <p className="text-[#333333] text-sm mb-4 flex-grow">
+        {item.description}
+      </p>
+
+      {/* Valuation 부분 */}
+      <div className="bg-[#4F81BD] text-white py-2 px-4 rounded text-center text-sm">
+        valuation {item.valuation}
+      </div>
+    </div>
+  </div>
+))}
         </div>
 
         {/* 하단 통계 원형 - 겹치도록 배치 */}
