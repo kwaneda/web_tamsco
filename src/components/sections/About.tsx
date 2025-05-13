@@ -209,14 +209,15 @@ const About = () => {
         </div>
 
         {/* 조직도 내용 */}
-        <div className="mb-20">
-          <div className="flex justify-center">
+        <div className="mb-20 px-4 md:px-8 lg:px-12"> {/* 패딩 추가 */}
+          <div className="max-w-[1920px] mx-auto"> {/* 최대 너비 제한 및 중앙 정렬 */}
             <Image
               src="/organization.png"
               alt="조직도"
-              width={1000}
-              height={500}
-              className="max-w-4xl w-full"
+              width={1500}
+              height={1000}
+              className="w-full h-auto object-contain"
+              priority
             />
           </div>
         </div>
