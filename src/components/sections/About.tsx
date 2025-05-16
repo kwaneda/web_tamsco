@@ -268,7 +268,7 @@ const About = () => {
         <h4 className="font-bold text-[#4F81BD] text-lg mb-3">주요 경력</h4>
         <ul className="space-y-2">
           {advisor.mainCareer.map((career, index) => (
-            <li key={index} className="text-sm text-[#666666]">
+            <li key={index} className="text-sm text-[#666666] whitespace-pre-line">
               · {career}
             </li>
           ))}
@@ -280,7 +280,7 @@ const About = () => {
         <h4 className="font-bold text-[#4F81BD] text-lg mb-3">전문 분야</h4>
         <ul className="space-y-2">
           {advisor.expertise.map((exp, index) => (
-            <li key={index} className="text-sm text-[#666666]">
+            <li key={index} className="text-sm text-[#666666] whitespace-pre-line">
               · {exp}
             </li>
           ))}
