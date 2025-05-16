@@ -246,76 +246,49 @@ const About = () => {
         </div>
 
         {/* 자문인력 프로필 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {advisors.map((advisor) => (
-            <div
-              key={advisor.name}
-              className="bg-gray-50 p-8 rounded-lg shadow-lg"
-            >
-              <div className="flex gap-8">
-                {/* 좌측: 이미지, 이름, 직함 */}
-                <div className="w-1/3 flex flex-col items-center">
-                  <Image
-                    src={advisor.image}
-                    alt={advisor.name}
-                    width={192}
-                    height={192}
-                    className="w-48 h-48 rounded-full object-cover border-4 border-[#006086] mb-4"
-                  />
-                  <h4 className="text-xl font-bold text-[#333333] mb-1 text-center">
-                    {advisor.name}
-                  </h4>
-                  <p className="text-base text-[#333333] mb-1 text-center">
-                    {advisor.nameEng}
-                  </p>
-                  <p className="text-base text-[#006086] font-medium text-center">
-                    {advisor.position}
-                  </p>
-                </div>
+    <div
+      key={advisor.name}
+      className="bg-[#F8F9FB] p-8 rounded-lg"
+    >
+      {/* 이름과 직책 */}
+      <div className="text-center mb-6">
+        <h3 className="text-xl font-bold text-[#333333] mb-1">
+          {advisor.name}, {advisor.nameEng}
+        </h3>
+        <p className="text-[#666666]">{advisor.position}</p>
+      </div>
 
-                {/* 구분선 */}
-                <div className="w-px bg-gray-200"></div>
+      {/* 구분선 */}
+      <div className="border-b border-gray-200 mb-6"></div>
 
-                {/* 우측: 주요 자격 및 전문 분야 */}
-                <div className="w-2/3">
-                  <div className="mb-6">
-                    <h5 className="text-lg font-bold text-[#006086] mb-3">
-                      주요 자격
-                    </h5>
-                    <ul className="space-y-2">
-                      {advisor.mainCareer.map((career, index) => (
-                        <li
-                          key={index}
-                          className="text-base text-[#333333] flex items-start whitespace-pre-line"
-                        >
-                          <span className="mr-2">•</span>
-                          <span>{career}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h5 className="text-lg font-bold text-[#006086] mb-3">
-                      전문 분야
-                    </h5>
-                    <ul className="space-y-2">
-                      {advisor.expertise.map((exp, index) => (
-                        <li
-                          key={index}
-                          className="text-base text-[#333333] flex items-start"
-                        >
-                          <span className="mr-2">•</span>
-                          <span>{exp}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+      {/* 주요 경력 */}
+      <div className="mb-6">
+        <h4 className="font-bold text-[#333333] mb-3">주요 경력</h4>
+        <ul className="space-y-2">
+          {advisor.mainCareer.map((career, index) => (
+            <li key={index} className="text-sm text-[#666666]">
+              · {career}
+            </li>
           ))}
-        </div>
+        </ul>
+      </div>
+
+      {/* 전문 분야 */}
+      <div>
+        <h4 className="font-bold text-[#333333] mb-3">전문 분야</h4>
+        <ul className="space-y-2">
+          {advisor.expertise.map((exp, index) => (
+            <li key={index} className="text-sm text-[#666666]">
+              · {exp}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  ))}
+</div>
       </div>
     </section>
   );
