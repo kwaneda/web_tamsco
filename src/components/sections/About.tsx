@@ -250,7 +250,7 @@ const About = () => {
           {advisors.map((advisor) => (
     <div
       key={advisor.name}
-      className="bg-[#F8F9FB] p-8 rounded-lg"
+      className="bg-[#EEF2F9] p-8 rounded-lg"
     >
       {/* 이름과 직책 */}
       <div className="text-center mb-6">
