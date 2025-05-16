@@ -246,11 +246,11 @@ const About = () => {
         </div>
 
         {/* 자문인력 프로필 */}
-<div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-  {advisors.map((advisor) => (
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {advisors.map((advisor) => (
     <div
       key={advisor.name}
-      className="bg-[#EEF2F9] p-8 rounded-lg"  {/* 배경색 변경 */}
+      className="bg-[#F8F9FB] p-8 rounded-lg"
     >
       {/* 이름과 직책 */}
       <div className="text-center mb-6">
@@ -265,7 +265,7 @@ const About = () => {
 
       {/* 주요 경력 */}
       <div className="mb-6">
-        <h4 className="font-bold text-[#4F81BD] mb-3">주요 경력</h4>  {/* 색상 변경 */}
+        <h4 className="font-bold text-[#4F81BD] mb-3">주요 경력</h4>
         <ul className="space-y-2">
           {advisor.mainCareer.map((career, index) => (
             <li key={index} className="text-sm text-[#666666]">
@@ -277,7 +277,7 @@ const About = () => {
 
       {/* 전문 분야 */}
       <div>
-        <h4 className="font-bold text-[#4F81BD] mb-3">전문 분야</h4>  {/* 색상 변경 */}
+        <h4 className="font-bold text-[#4F81BD] mb-3">전문 분야</h4>
         <ul className="space-y-2">
           {advisor.expertise.map((exp, index) => (
             <li key={index} className="text-sm text-[#666666]">
