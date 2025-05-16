@@ -265,7 +265,7 @@ const About = () => {
 
       {/* 주요 경력 */}
       <div className="mb-6">
-        <h4 className="font-bold text-[#4F81BD] mb-3">주요 경력</h4>
+        <h4 className="font-bold text-[#4F81BD] mb-2">주요 경력</h4>
         <ul className="space-y-2">
           {advisor.mainCareer.map((career, index) => (
             <li key={index} className="text-sm text-[#666666]">
@@ -277,7 +277,7 @@ const About = () => {
 
       {/* 전문 분야 */}
       <div>
-        <h4 className="font-bold text-[#4F81BD] mb-3">전문 분야</h4>
+        <h4 className="font-bold text-[#4F81BD] mb-2">전문 분야</h4>
         <ul className="space-y-2">
           {advisor.expertise.map((exp, index) => (
             <li key={index} className="text-sm text-[#666666]">
