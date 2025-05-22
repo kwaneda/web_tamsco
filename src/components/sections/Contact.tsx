@@ -174,13 +174,17 @@ const Contact = () => {
 
             <div className="space-y-4">
               <div className="bg-gray-100 p-4 rounded-lg text-[#333333]">
-                개인정보 수집 및 이용 동의 *
-                <div className="mt-2">
-                  제공하신 개인정보는 회사가 제공하는 개인정보 보호정책에
-                  의거하여 안전하게 처리되며, 문의 응대 및 서비스 제공의
-                  목적으로 사용됩니다.
-                </div>
-              </div>
+                div className="font-bold mb-2">개인정보 수집 및 이용 동의 *</div>
+    <div className="space-y-2 text-sm">
+      <p>탐스 주식회사는 아래와 같이 개인정보를 수집·이용합니다.</p>
+      <div className="pl-4">
+        <p>1 수집 항목: 회사명, 이름, 연락처, 이메일, 문의내용</p>
+        <p>2 수집·이용 목적: 문의 응대 및 서비스 제공</p>
+        <p>3 보유 및 이용 기간: 문의 처리 완료 후 1년간 보관 후 파기</p>
+        <p>4 동의 거부 권리 및 불이익: 귀하는 개인정보 수집 및 이용에 동의하지 않을 권리가 있습니다. 다만, 동의하지 않을 경우 문의 접수 및 상담이 제한될 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
               <div className="flex items-center">
                 <input
                   type="checkbox"
@@ -196,7 +200,7 @@ const Contact = () => {
                   htmlFor="agreement"
                   className="cursor-pointer text-[#333333]"
                 >
-                  개인정보 수집 및 이용에 동의합니다
+                  위 내용을 충분히 읽고 이해하였으며, 개인정보 수집 및 이용에 동의합니다.
                 </label>
               </div>
             </div>
