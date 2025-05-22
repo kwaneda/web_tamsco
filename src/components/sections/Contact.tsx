@@ -174,7 +174,7 @@ const Contact = () => {
 
             <div className="space-y-4">
               <div className="bg-gray-100 p-4 rounded-lg text-[#333333]">
-                div className="font-bold mb-2">개인정보 수집 및 이용 동의 *</div>
+                <div className="font-bold mb-2">개인정보 수집 및 이용 동의 *</div>
     <div className="space-y-2 text-sm">
       <p>탐스 주식회사는 아래와 같이 개인정보를 수집·이용합니다.</p>
       <div className="pl-4">
