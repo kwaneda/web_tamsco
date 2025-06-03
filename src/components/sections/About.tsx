@@ -172,7 +172,7 @@ const About = () => {
               합니다.
             </p>
             <p className="text-[#333333] mb-8 leading-relaxed">
-              세무 이슈 해결은 물론 지속 가능한 경영과 자산 보호까지.단순한 자문을 넘어 고객과<br />
+              세무 이슈 해결은 물론, 지속 가능한 경영과 자산 보호까지 단순한 자문을 넘어 고객과<br />
               함께 성장하는 동반자적 컨설팅을 제공하는TAMS와 함께 전략적 미래를 설계하십시오.<br/>
             </p>
             <div className="text-right mt-8">
